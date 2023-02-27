@@ -33,7 +33,7 @@
             this.btnEnter = new MaterialSkin.Controls.MaterialButton();
             this.txtCaptcha = new MaterialSkin.Controls.MaterialTextBox2();
             this.tbPassword = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblEnterCaptcha = new MaterialSkin.Controls.MaterialLabel();
             this.tbLogin = new MaterialSkin.Controls.MaterialTextBox2();
             this.lblCaptcha = new MaterialSkin.Controls.MaterialLabel();
             this.lblPassword = new MaterialSkin.Controls.MaterialLabel();
@@ -48,14 +48,14 @@
             this.gbAuthorization.Controls.Add(this.btnEnter);
             this.gbAuthorization.Controls.Add(this.txtCaptcha);
             this.gbAuthorization.Controls.Add(this.tbPassword);
-            this.gbAuthorization.Controls.Add(this.materialLabel1);
+            this.gbAuthorization.Controls.Add(this.lblEnterCaptcha);
             this.gbAuthorization.Controls.Add(this.tbLogin);
             this.gbAuthorization.Controls.Add(this.lblCaptcha);
             this.gbAuthorization.Controls.Add(this.lblPassword);
             this.gbAuthorization.Controls.Add(this.lblLogin);
             this.gbAuthorization.Location = new System.Drawing.Point(12, 12);
             this.gbAuthorization.Name = "gbAuthorization";
-            this.gbAuthorization.Size = new System.Drawing.Size(393, 380);
+            this.gbAuthorization.Size = new System.Drawing.Size(314, 331);
             this.gbAuthorization.TabIndex = 0;
             this.gbAuthorization.TabStop = false;
             this.gbAuthorization.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -68,17 +68,18 @@
             this.btnExit.Depth = 0;
             this.btnExit.HighEmphasis = true;
             this.btnExit.Icon = null;
-            this.btnExit.Location = new System.Drawing.Point(28, 302);
+            this.btnExit.Location = new System.Drawing.Point(13, 267);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnExit.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnExit.Name = "btnExit";
             this.btnExit.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnExit.Size = new System.Drawing.Size(322, 36);
+            this.btnExit.Size = new System.Drawing.Size(283, 36);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Выйти";
             this.btnExit.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnExit.UseAccentColor = false;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnEnter
             // 
@@ -88,17 +89,18 @@
             this.btnEnter.Depth = 0;
             this.btnEnter.HighEmphasis = true;
             this.btnEnter.Icon = null;
-            this.btnEnter.Location = new System.Drawing.Point(28, 254);
+            this.btnEnter.Location = new System.Drawing.Point(13, 219);
             this.btnEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEnter.Size = new System.Drawing.Size(322, 36);
+            this.btnEnter.Size = new System.Drawing.Size(283, 36);
             this.btnEnter.TabIndex = 7;
             this.btnEnter.Text = "Войти";
             this.btnEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnEnter.UseAccentColor = false;
             this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // txtCaptcha
             // 
@@ -109,7 +111,7 @@
             this.txtCaptcha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCaptcha.HideSelection = true;
             this.txtCaptcha.LeadingIcon = null;
-            this.txtCaptcha.Location = new System.Drawing.Point(13, 189);
+            this.txtCaptcha.Location = new System.Drawing.Point(12, 95);
             this.txtCaptcha.MaxLength = 32767;
             this.txtCaptcha.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCaptcha.Name = "txtCaptcha";
@@ -121,7 +123,7 @@
             this.txtCaptcha.SelectionLength = 0;
             this.txtCaptcha.SelectionStart = 0;
             this.txtCaptcha.ShortcutsEnabled = true;
-            this.txtCaptcha.Size = new System.Drawing.Size(337, 48);
+            this.txtCaptcha.Size = new System.Drawing.Size(278, 48);
             this.txtCaptcha.TabIndex = 6;
             this.txtCaptcha.TabStop = false;
             this.txtCaptcha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -143,23 +145,24 @@
             this.tbPassword.Multiline = false;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Password = true;
-            this.tbPassword.Size = new System.Drawing.Size(337, 50);
+            this.tbPassword.Size = new System.Drawing.Size(277, 50);
             this.tbPassword.TabIndex = 5;
             this.tbPassword.Text = "";
             this.tbPassword.TrailingIcon = null;
             // 
-            // materialLabel1
+            // lblEnterCaptcha
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(12, 167);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(115, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Введите капчу:";
-            this.materialLabel1.Visible = false;
+            this.lblEnterCaptcha.AutoSize = true;
+            this.lblEnterCaptcha.Depth = 0;
+            this.lblEnterCaptcha.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblEnterCaptcha.Location = new System.Drawing.Point(13, 54);
+            this.lblEnterCaptcha.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEnterCaptcha.Name = "lblEnterCaptcha";
+            this.lblEnterCaptcha.Size = new System.Drawing.Size(115, 19);
+            this.lblEnterCaptcha.TabIndex = 2;
+            this.lblEnterCaptcha.Text = "Введите капчу:";
+            this.lblEnterCaptcha.Visible = false;
+            this.lblEnterCaptcha.Click += new System.EventHandler(this.lblEnterCaptcha_Click);
             // 
             // tbLogin
             // 
@@ -182,7 +185,7 @@
             this.tbLogin.SelectionLength = 0;
             this.tbLogin.SelectionStart = 0;
             this.tbLogin.ShortcutsEnabled = true;
-            this.tbLogin.Size = new System.Drawing.Size(337, 48);
+            this.tbLogin.Size = new System.Drawing.Size(277, 48);
             this.tbLogin.TabIndex = 4;
             this.tbLogin.TabStop = false;
             this.tbLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -195,12 +198,11 @@
             this.lblCaptcha.BackColor = System.Drawing.SystemColors.Control;
             this.lblCaptcha.Depth = 0;
             this.lblCaptcha.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblCaptcha.Location = new System.Drawing.Point(134, 356);
+            this.lblCaptcha.Location = new System.Drawing.Point(126, 167);
             this.lblCaptcha.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCaptcha.Name = "lblCaptcha";
-            this.lblCaptcha.Size = new System.Drawing.Size(100, 19);
+            this.lblCaptcha.Size = new System.Drawing.Size(1, 0);
             this.lblCaptcha.TabIndex = 3;
-            this.lblCaptcha.Text = "54654654564";
             this.lblCaptcha.Visible = false;
             this.lblCaptcha.Click += new System.EventHandler(this.lblCaptcha_Click);
             // 
@@ -229,15 +231,15 @@
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Введите логин:";
             // 
-            // Form1
+            // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(417, 403);
+            this.ClientSize = new System.Drawing.Size(340, 354);
             this.Controls.Add(this.gbAuthorization);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "AuthForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма авторизации";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -250,7 +252,7 @@
         #endregion
 
         private GroupBox gbAuthorization;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblEnterCaptcha;
         private MaterialSkin.Controls.MaterialLabel lblPassword;
         private MaterialSkin.Controls.MaterialLabel lblLogin;
         private MaterialSkin.Controls.MaterialTextBox2 tbLogin;

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ksyusha": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
