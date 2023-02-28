@@ -4,12 +4,14 @@ using System.Windows.Forms;
 using ksyusha.Services;
 using System.Diagnostics.CodeAnalysis;
 
+
 namespace ksyusha
 {
     public partial class AuthForm : Form
     {
         Random rnd = new Random();
-        string all = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+        string all = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";   
+        int popito4ki = 1;
         public AuthForm()
         {
             InitializeComponent();
@@ -54,23 +56,43 @@ namespace ksyusha
         private void btnEnter_Click(object sender, EventArgs e)
         {
 
-            if (tbLogin.Text == "" && tbPassword.Text == "" && txtCaptcha.Text == "")
+            if (string.IsNullOrWhiteSpace(tbLogin.Text) && string.IsNullOrWhiteSpace(tbPassword.Text) && string.IsNullOrWhiteSpace(txtCaptcha.Text))
             {
-                MessageBox.Show("Вы ничего не ввели");
+                MessageBox.Show("Вы ничего не ввели", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+                
+            if (tbLogin.Text == "plqq" && tbPassword.Text == "1234")
+            {
+
+                MessageBox.Show("Верный пароль");
+
             }
             else
             {
-                for (int i = 1; i < 3;i++)
+                if (lblCaptcha.Visible == false)
                 {
-                    if (tbLogin.Text == "plqq" && tbPassword.Text == "1234")
-                    {
-
-                        MessageBox.Show("Верный пароль");
-
-                    }
+                    popito4ki += 1;
                 }
-               this.Close();
+                
+                if (popito4ki >= 3)
+                {
+                    MessageBox.Show("Вы неверно ввели данные 3 раза. Введите капчу");
+                    captcha();
+                    
+                }
+                else if (lblCaptcha.Visible = true)
+                {
+                    captcha();
+                    
+                }
+
+                
             }
+            
+                
+            
              void captcha()
              {
                 lblPassword.Visible= false;
@@ -80,8 +102,8 @@ namespace ksyusha
                 lblCaptcha.Visible = true;
                 txtCaptcha.Visible = true;
                 lblEnterCaptcha.Visible = true;
+
                 
-                generate();
                 if (txtCaptcha.Text == lblCaptcha.Text)
                 {
                     lblPassword.Visible = true;
@@ -91,12 +113,15 @@ namespace ksyusha
                     lblCaptcha.Visible = false;
                     lblEnterCaptcha.Visible = false;
                     txtCaptcha.Visible = false;
+                    txtCaptcha.Text = null;
+                    
                 }
                 else
                 {
                     txtCaptcha.Text = null;
                 }
-             }
+                generate();
+            }
             string generate()
             {
                 lblCaptcha.Text = String.Empty;

@@ -9,7 +9,7 @@ namespace ksyusha.Services
 {
     internal class DatabaseService
     {
-        SqlConnection connection = new SqlConnection("Data Source=  ;Initial catalog= ;User ID= ;Password=");
+        SqlConnection connection = new SqlConnection("Data Source=;Initial catalog=;User ID=;Password=");
 
         public void OpenConnection()
         {
